@@ -1,0 +1,39 @@
+// colors
+
+$primary-green: #70C174;
+$secondary-green: #BEF3C0;
+$third-green:#EFF7F2;
+$black:#0B0706;
+$primary-text:#1D2130;
+$secondary-text:#525560;
+$off-white:#EBF0F9;
+$border:#E5E5E5;
+$white:#ffffff;
+
+
+// font size
+
+$home-heading:64px;
+$heading1:56px;
+$heading2:48px;
+$heading3:28px;
+$heading4:20px;
+$heading5:14px;
+$heading6:12px;
+
+
+// mixins
+
+@mixin text-line{
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -96px;
+        height: 2px;
+        width: 72px;
+        background-color: $primary-text;
+        transform: translateY(-50%);
+    }
+}

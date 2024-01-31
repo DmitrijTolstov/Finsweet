@@ -26,6 +26,7 @@ $heading6:12px;
 
 @mixin text-line{
     position: relative;
+    text-transform: uppercase;
     &::before{
         content: '';
         position: absolute;

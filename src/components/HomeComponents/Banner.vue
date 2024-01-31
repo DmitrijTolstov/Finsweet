@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue'
-import Buttons from './Buttons.vue';
+import Buttons from '@/components//Buttons.vue';
 </script>
 
 <template>
@@ -27,7 +27,7 @@ import Buttons from './Buttons.vue';
 <style scoped lang='scss'>
 @import '@/assets/vars.scss';
 .banner{
-    background-image: url('../assets/images/banner.png');
+    background-image: url('@/assets/images/banner.png');
     background-size: cover;
     background-position: center;
     padding: 128px 110px 64px 110px;

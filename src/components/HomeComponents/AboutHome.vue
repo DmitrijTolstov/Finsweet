@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue'
-import Buttons from './Buttons.vue';
+import Buttons from '@/components/Buttons.vue';
 </script>
 
 <template>
@@ -25,7 +25,7 @@ import Buttons from './Buttons.vue';
                 <div class="about-content_video">
                     <a href="#">
                         <img class="about-content_video__link" src="@/assets/images/play.svg" alt="">
-                        <img src="../assets/images/aboutHome-video.png" alt="">
+                        <img src="@/assets/images/aboutHome-video.png" alt="">
                     </a>
                 </div>
             </div>

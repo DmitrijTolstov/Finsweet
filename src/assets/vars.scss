@@ -38,3 +38,15 @@ $heading6:12px;
         transform: translateY(-50%);
     }
 }
+
+@mixin square($color){
+    position: absolute;
+                content: '';
+                width: 16px;
+                height: 16px;
+                background-color: $color;
+                left: -24px;
+                border-radius: 4px;
+                top: 50%;
+                transform: translateY(-50%);
+}

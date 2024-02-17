@@ -60,6 +60,6 @@ const images = [
 }
 
 .text-line{
-    @include text-line;
+    @include text-line(left);
 }
 </style>

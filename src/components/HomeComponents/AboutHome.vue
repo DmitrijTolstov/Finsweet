@@ -106,6 +106,6 @@ import Buttons from '@/components/Buttons.vue';
 }
 
 .text-line{
-    @include text-line;
+    @include text-line(left);
 }
 </style>

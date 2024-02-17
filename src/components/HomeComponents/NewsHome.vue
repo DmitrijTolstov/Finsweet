@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 import NewsCard from '@/components/NewsCard.vue';
 
 const cards = [
@@ -49,6 +48,7 @@ const cards = [
 <style scoped lang='scss'>
 @import '@/assets/vars.scss';
 .news{
+    margin-bottom: 96px;
     &__title{
         font-size: $heading2;
     }

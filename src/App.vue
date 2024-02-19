@@ -1,10 +1,11 @@
 <script setup>
-import {ref} from 'vue'
 import Home from './layouts/Home.vue';
+import About from './layouts/About.vue';
 </script>
 
 <template>
-    <Home></Home>
+    <!-- <Home></Home> -->
+    <About></About>
 </template>
 
 <style scoped lang="scss">

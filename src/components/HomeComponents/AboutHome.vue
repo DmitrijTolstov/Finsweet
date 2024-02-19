@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import Buttons from '@/components/Buttons.vue';
+import Supporters from '../Supporters.vue';
 </script>
 
 <template>
@@ -29,19 +30,7 @@ import Buttons from '@/components/Buttons.vue';
                     </a>
                 </div>
             </div>
-            <div class="about-supporters">
-                <p class="about-supporters_text">
-                    our Supporters
-                </p>
-                <div class="about-supporters_logo">
-                    <img src="@/assets/images/about-logo1.svg" alt="">
-                    <img src="@/assets/images/about-logo2.svg" alt="">
-                    <img src="@/assets/images/about-logo3.svg" alt="">
-                    <img src="@/assets/images/about-logo4.svg" alt="">
-                    <img src="@/assets/images/about-logo5.svg" alt="">
-                    <img src="@/assets/images/about-logo2.svg" alt="">
-                </div>
-            </div>
+            <Supporters></Supporters>
         </section>
     </div>
 </template>
@@ -79,28 +68,6 @@ import Buttons from '@/components/Buttons.vue';
                     transition: all 1s;
                 }
             }
-        }
-    }
-    &-supporters{
-        margin-top: 64px;
-        &_text{
-            margin-bottom: 32px;
-            text-transform: uppercase;
-            position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                height: 2px;
-                background-color:$border ;
-                width: 1094px;
-                transform: translatey(-50%);
-            }
-        }
-        &_logo{
-            display: flex;
-            justify-content: space-between
         }
     }
 }

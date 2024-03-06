@@ -1,24 +1,6 @@
 <script setup>
 import PortfolioCard from '../PortfolioCard.vue';
 
-const images = [
-    {id:1,
-    image:'src/assets/images/portfolio1.png',
-    title:'Mission 40K: Tree plantation',
-    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-    },
-    {id:2,
-    image:'src/assets/images/portfolio2.png',
-    title:'Weekly cleanliness program in city',
-    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-    },
-    {id:3,
-    image:'src/assets/images/portfolio3.png',
-    title:'Wildlife safety program 2021',
-    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-    },
-]
-
 </script>
 
 <template>
@@ -33,7 +15,7 @@ const images = [
                 </h2>
             </div>
             <div class="projects-portfolio" >
-                <PortfolioCard v-for="(item, id) in images" :key="id" :title="item.title" :text="item.text" :image="item.image"></PortfolioCard>
+                <PortfolioCard></PortfolioCard>
             </div>
         </section>
     </div>

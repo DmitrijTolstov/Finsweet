@@ -1,27 +1,32 @@
 <script setup>
 import Buttons from './Buttons.vue';
 
-const props = defineProps({
-    title:{
-        type:String,
-        default:"lorem ipsum",
+const cards = [
+    {id:1,
+    image:'src/assets/images/portfolio1.png',
+    title:'Mission 40K: Tree plantation',
+    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
     },
-    text:{
-        type:String,
-        default:"lorem ipsum",
+    {id:2,
+    image:'src/assets/images/portfolio2.png',
+    title:'Weekly cleanliness program in city',
+    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
     },
-    image:{
-        type:String,
-    }
-})
-
+    {id:3,
+    image:'src/assets/images/portfolio3.png',
+    title:'Wildlife safety program 2021',
+    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    },
+]
 </script>
 
 <template>
-    <div :style="{backgroundImage:'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),' + `url(${props.image})`}" class="card">
+    <div
+    v-for="(item, index) in cards" :key="index"
+     :style="{backgroundImage:'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),' + `url(${item.image})`}" class="card">
         <div  class="card-content">
-            <h3 class="card-content__title">{{ title }}</h3>
-            <p class="card-content__text">{{ text }}</p>
+            <h3 class="card-content__title">{{ item.title }}</h3>
+            <p class="card-content__text">{{ item.text }}</p>
             <Buttons :color="'#000000'" :bg-color="'#FFFFFF'" :title="'See more'"></Buttons>
         </div>
     </div>
@@ -35,6 +40,7 @@ const props = defineProps({
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 12px;
+    text-align: left;
     &:not(:last-child){
             margin-right: 23px;
         }

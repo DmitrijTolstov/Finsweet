@@ -1,5 +1,6 @@
 <script setup>
-import Supporters from '../Supporters.vue';
+import AwardsAbout from './AwardsAbout.vue';
+import Supporters from '@/components/Supporters.vue';
 </script>
 
 <template>
@@ -46,6 +47,7 @@ import Supporters from '../Supporters.vue';
                     </div>
                 </div>
                 <Supporters></Supporters>
+                <AwardsAbout></AwardsAbout>
             </div>
         </div>
     </section>
@@ -69,7 +71,7 @@ import Supporters from '../Supporters.vue';
       z-index: -1;
     }
     &__text{
-        @include text-line(left)
+        @include text-line()
     }
     &-content{
         &_banner{

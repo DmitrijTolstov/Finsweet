@@ -24,14 +24,15 @@ $heading6:12px;
 
 // mixins
 
-@mixin text-line($position, $number: -96px){
+@mixin text-line($position: left, $margin: 96px, $distance: -96px){
     position: relative;
     text-transform: uppercase;
+    margin-left: $margin;
     &::before{
         content: '';
         position: absolute;
         top: 50%;
-        #{$position}: $number;
+        #{$position}: $distance;
         height: 2px;
         width: 72px;
         background-color: $primary-text;

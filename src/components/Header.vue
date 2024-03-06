@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 import Navigation from './Navigation.vue';
 </script>
 
@@ -19,5 +18,6 @@ import Navigation from './Navigation.vue';
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 96px;
 }
 </style>

@@ -5,7 +5,7 @@ import AboutHome from '@/components/HomeComponents/AboutHome.vue';
 import Deeds from '@/components/HomeComponents/Deeds.vue';
 import ProjectsHome from '@/components/HomeComponents/ProjectsHome.vue';
 import Diagram from '@/components/HomeComponents/Diagram.vue';
-import NewsHome from '@/components/HomeComponents/NewsHome.vue';
+import NewsHome from '@/components/News.vue';
 import Events from '@/components/Events.vue';
 import Footer from '@/components/Footer.vue';
 import Donate from '@/components/Donate.vue';

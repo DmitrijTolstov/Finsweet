@@ -27,7 +27,7 @@ import Buttons from './Buttons.vue';
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    margin-bottom: 96px;
+    margin: 96px 0;
     &-content{
         text-align: center;
         &__title{

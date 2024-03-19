@@ -1,7 +1,7 @@
 <script setup>
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
-import AboutMainPage from '@/components/aboutComponents/AboutMainPage.vue';
+import mainPage from '@/components/aboutComponents/mainPage.vue';
 import Journey from '@/components/aboutComponents/Journey.vue';
 import AboutTeam from '@/components/aboutComponents/AboutTeam.vue';
 import NewsHome from '@/components/News.vue';
@@ -11,7 +11,7 @@ import Donate from '@/components/Donate.vue';
 
 <template>
     <Header></Header>
-    <AboutMainPage></AboutMainPage>
+    <mainPage></mainPage>
     <Journey></Journey>
     <AboutTeam></AboutTeam>
     <Donate></Donate>

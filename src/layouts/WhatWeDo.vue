@@ -1,19 +1,19 @@
 <script setup>
 import Header from '@/components/Header.vue';
-import Environment from '@/components/WhatWeDo/Environment.vue';
-import Projects from '@/components/WhatWeDo/Projects.vue';
+import Environment from '@/components/WhatWeDoComponents/Environment.vue';
+import Projects from '@/components/WhatWeDoComponents/Projects.vue';
 import Donate from '@/components/Donate.vue';
 import News from '@/components/News.vue';
 import Events from '@/components/Events.vue';
 import Footer from '@/components/Footer.vue';
-import WhatWeDoMainPage from '@/components/WhatWeDo/WhatWeDoMainPage.vue';
+import mainPage from '@/components/WhatWeDoComponents/mainPage.vue';
 
 
 </script>
 
 <template>
         <Header></Header>
-        <WhatWeDoMainPage></WhatWeDoMainPage>
+        <mainPage></mainPage>
         <Environment></Environment>
         <Projects></Projects>
         <Donate></Donate>

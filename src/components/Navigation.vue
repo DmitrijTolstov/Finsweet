@@ -22,10 +22,7 @@ import Button from './Buttons.vue';
     &-links{
         display: flex;
         align-items: center;
-        &__link{
-            padding: 0 40px;
-
-        }
+        gap: 40px;
     }
 }
 </style>

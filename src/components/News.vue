@@ -24,14 +24,23 @@ const cards = [
     },
 ]
 
+const props = defineProps({
+    title:'Read Our News',
+    text:'',
+    textShow: false
+})
+
 </script>
 
 <template>
     <section class="news">
         <div class="container">
             <h2 class="news__title">
-                Read Our News
+                {{ props.title }}
             </h2>
+            <p v-if="textShow" class="news_text">
+                {{ props.text }}
+            </p>
             <div class="news-cards">
                 <NewsCard 
                 v-for="(card, index) in cards" :key="index"
@@ -56,6 +65,10 @@ const cards = [
         display: flex;
         gap: 24px;
         margin-top: 48px;
+    }
+    &_text{
+        max-width: 450px;
+        margin: 16px auto 48px;
     }
 }
 </style>

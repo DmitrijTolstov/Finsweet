@@ -1,4 +1,5 @@
 <script setup>
+
 const props = defineProps({
     images:{
         type:String,
@@ -13,16 +14,20 @@ const props = defineProps({
         type:String,
         require:true,
         default:'lorem ipsum'
-    }
+    },
+    display:'',
+    gap:''
 })
 
 </script>
 
 <template>
-    <div class="card">
+    <div :style="`display: ${props.display}; gap:${props.gap}`"  class="card">
         <img :src="props.images" class="card__image">
-        <h4 class="card__title">{{ props.title }}</h4>
-        <p class="card__text">{{props.text}}</p>
+        <div class="card-content">
+            <h4 class="card__title">{{ props.title }}</h4>
+            <p class="card__text">{{props.text}}</p>
+        </div>
     </div>
 </template>
 
@@ -36,6 +41,7 @@ const props = defineProps({
         margin-top: 16px;
         margin-bottom: 8px;
         font-size: $heading4;
+        font-weight: 700;
     }
     &__text{
         opacity: .4;

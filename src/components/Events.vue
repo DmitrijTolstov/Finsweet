@@ -14,6 +14,10 @@ const cards = [
     }
 ]
 
+const props = defineProps({
+    direction: String
+})
+
 
 </script>
 
@@ -21,7 +25,7 @@ const cards = [
     <section class="events">
         <div class="container">
             <h2 class="events__title">Our Events</h2>
-            <div class="events-cards">
+            <div class="events-cards" :style="{flexDirection:direction}">
                 <EventsCard v-for="({title,month,monthDate} = cards, index) in cards" :key="index"
                 :title="title"
                 :month="month"
@@ -35,11 +39,13 @@ const cards = [
 
 <style scoped lang='scss'>
 .events{
+    margin: 96px 0;
     &-cards{
         display: flex;
         margin-bottom: 136px;
         margin-top: 48px;
         justify-content: space-between;
+        gap: 24px;
     }
     &__title{
         font-size: 40px;

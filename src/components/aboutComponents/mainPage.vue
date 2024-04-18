@@ -5,17 +5,26 @@ import Supporters from '@/components/Supporters.vue';
 
 <template>
     <section class="about">
+        <div class="about-bg"></div>
         <div class="container">
-            <p class="about__text">
-                Know about us
-            </p>
+
             <div class="about-content about-content_top">
+                <div class="about-content_main">
+                    <p class="about__text">
+                Know about us
+                </p>
                 <h2 class="about-content__title">
                     We are a nonprofit team <hr> working worldwide
                 </h2>
-                <p class="about-content__text">
-                    <b>Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim elementum tristique.
-                </p>
+                </div>
+                <aside class="about-content_secondary">
+                    <h4 class="about-content__supTitle">
+                        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                    </h4>
+                    <p class="about-content__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim elementum tristique.
+                    </p>
+                </aside>
             </div>
             <div class="about-content about-content_down">
                 <div class="about-content_banner">
@@ -24,24 +33,24 @@ import Supporters from '@/components/Supporters.vue';
                 </div>
                 <div class="about-content_business">
                     <div class="about-content_business_mission about-content_business__width">
-                        <p class="about-content_business__text">
+                        <p class="about-content_business__supTitle">
                             our mission
                         </p>
                         <h3 class="about-content_business__title">
                             We make the world we save our own environment
                         </h3>
-                        <p>
+                        <p class="about-content_business__text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
                         </p>
                     </div>
                     <div class="about-content_business_vision about-content_business__width">
-                        <p class="about-content_business__text">
+                        <p class="about-content_business__supTitle">
                             our Vision
                         </p>
                         <h3 class="about-content_business__title">
                             Plant more trees to make world air pollution free
                         </h3>
-                        <p>
+                        <p class="about-content_business__text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
                         </p>
                     </div>
@@ -58,22 +67,29 @@ import Supporters from '@/components/Supporters.vue';
 @import '@/assets/vars.scss';
 
 .about{
-    position: relative;
     padding-bottom: 96px;
-    &::after{
-      content: ' ';
-      position: absolute;
-      top: 40%;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background-color: $third-green;
-      z-index: -1;
+    &-bg{
+        &::after{
+        content: ' ';
+        position: absolute;
+        top: 70%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: $third-green;
+        z-index: -1;
+        width: 100%;
+        height: 75%;
+        }
     }
+    
     &__text{
-        @include text-line()
+        @include text-line(left,96px)
     }
     &-content{
+        &_secondary{
+            max-width: 496px;
+        }
         &_banner{
             position: relative;
             &__play{
@@ -92,16 +108,20 @@ import Supporters from '@/components/Supporters.vue';
             margin-bottom: 96px;
             margin-top: 32px;
         }
+        &__supTitle{
+            margin-bottom: 16px;
+            font-size: $heading4;
+            font-weight: 700;
+        }
         &__text{
             max-width: 496px;
-            b{
-                display: block;
-                margin-bottom: 16px;
-                font-size: $heading4;
-            }
+            color: $secondary-text;
         }
         &__title{
             font-size: $heading2;
+            font-weight: 700;
+            margin-left: 96px;
+            margin-top: 32px;
         }
         &_down{
             overflow: hidden;
@@ -116,10 +136,14 @@ import Supporters from '@/components/Supporters.vue';
                 margin-bottom: 6px;
                 font-weight: 700;
             }
-            &__text{
+            &__supTitle{
                 font-weight: 700;
                 text-transform: uppercase;
                 margin-bottom: 16px;
+                color: $secondary-text;
+            }
+            &__text{
+                color: $secondary-text;
             }
             &__width{
                 max-width: 496px;

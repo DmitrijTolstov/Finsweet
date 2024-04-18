@@ -12,7 +12,8 @@ import Supporters from '../Supporters.vue';
                     <p class="text-line">
                         Know About us
                     </p>
-                    <h2 class="about-content_title">
+                    <div class="about-content_left">
+                        <h2 class="about-content_title">
                         We help nature smile and survive everywhere
                     </h2>
                     <p class="about-content_text">
@@ -22,6 +23,7 @@ import Supporters from '../Supporters.vue';
                         ‍Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
                     </p>
                     <Buttons :title="'Learn more'" :bgColor="'#70C174'"></Buttons>
+                    </div>
                 </div>
                 <div class="about-content_video">
                     <a href="#">
@@ -44,6 +46,9 @@ import Supporters from '../Supporters.vue';
     }
     &-content{
         margin-right: 96px;
+        &_left{
+            margin-left: 96px;
+        }
         &_title{
             font-size: $heading2;
             font-weight: 700;

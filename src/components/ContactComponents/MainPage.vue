@@ -2,7 +2,6 @@
 import Header from '@/components/Header.vue';
 import NewsCard from '@/components/NewsCard.vue';
 
-
 const offices = [
     {
         title:`Let's talk!` ,
@@ -73,7 +72,6 @@ const offices = [
             </div>
         </div>
     </section>
-
 </template>
 
 <style scoped lang='scss'>

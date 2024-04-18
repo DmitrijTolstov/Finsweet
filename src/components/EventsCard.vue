@@ -55,7 +55,7 @@ const props = defineProps({
     &-content{
         width:381px;
         &__paragraph{
-            @include text-line(right,50%)
+            @include text-line(right,0, 185px)
         }
         &__title{
             font-size: $heading3;

@@ -56,8 +56,8 @@ const list = [
 <style scoped lang='scss'>
 @import '@/assets/vars.scss';
 .environment{
+    padding: 96px;
     background-color: $third-green;
-    padding: 96px 0;
     &__heading{
         font-size: $heading2;
         font-weight: 700;

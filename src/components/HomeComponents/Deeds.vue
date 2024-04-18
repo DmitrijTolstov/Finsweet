@@ -10,7 +10,8 @@
                     <p class="text-line">
                         What we do
                     </p>
-                    <h2 class="deeds-content_title">
+                    <div class="deeds-content_left">
+                        <h2 class="deeds-content_title">
                         We care for earth, care for the coming birth
                     </h2>
                     <p class="deeds-content_text">
@@ -42,6 +43,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
                         </p>
                     </ul>
+                    </div>
                 </div>
                 <div class="deeds-content_image">
                     <a href="#">
@@ -67,6 +69,9 @@
     }
     &-content{
         margin-right: 96px;
+        &_left{
+            margin-left: 96px;
+        }
         &_title{
             font-size: $heading2;
             font-weight: 700;
@@ -74,6 +79,7 @@
         }
         &_text{
             margin-bottom: 32px;
+            color: $secondary-text;
         }
         &_list{
             max-width: 460px;
@@ -102,6 +108,7 @@
             }
             &__text{
                 padding-left: 52px;
+                color: $secondary-text;
                 &:not(:last-child){
                     margin-bottom: 24px;
                 }

@@ -1,7 +1,7 @@
 <script setup>
 import Header from '@/components/Header.vue';
 import Environment from '@/components/WhatWeDoComponents/Environment.vue';
-import Projects from '@/components/WhatWeDoComponents/Projects.vue';
+import Projects from '@/components/Projects.vue';
 import Donate from '@/components/Donate.vue';
 import News from '@/components/News.vue';
 import Events from '@/components/Events.vue';

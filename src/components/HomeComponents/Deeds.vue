@@ -46,9 +46,7 @@
                     </div>
                 </div>
                 <div class="deeds-content_image">
-                    <a href="#">
                         <img src="@/assets/images/deeds.png" alt="">
-                    </a>
                 </div>
             </div>
         </div>

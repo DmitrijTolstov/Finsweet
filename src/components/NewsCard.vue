@@ -44,7 +44,7 @@ const props = defineProps({
         font-weight: 700;
     }
     &__text{
-        opacity: .4;
+        color: $secondary-text;
     }
 }
 </style>

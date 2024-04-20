@@ -13,20 +13,19 @@ const props = defineProps({
     color:{
         type:String,
         default:'white'
-    }
+    },
 })
 
 </script>
 
 <template>
-    <button  :style="{backgroundColor:bgColor, color:color}" class="btn">{{ title }}</button>
+    <button :style="{backgroundColor:bgColor, color:color}" class="btn" > {{ title }}</button>
 </template>
 
 <style scoped lang='scss'>
-@import '../assets/vars.scss';
 .btn{
     padding: 12px 32px;
-    background-color: $black;
+    background-color: black;
     border-radius: 4px;
 }
 </style>

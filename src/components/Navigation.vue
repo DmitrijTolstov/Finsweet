@@ -6,11 +6,11 @@ import Button from './Buttons.vue';
 <template>
     <nav class="navigation">
         <ul class="navigation-links">
-            <li class="navigation-links__link"><a href="#">Home</a></li>
-            <li class="navigation-links__link"><a href="#">About us</a></li>
-            <li class="navigation-links__link"><a href="#">What We Do</a></li>
-            <li class="navigation-links__link"><a href="#">Media</a></li>
-            <li class="navigation-links__link"><a href="#">Contact</a></li>
+            <li class="navigation-links__link"><router-link to="/" >Home</router-link></li>
+            <li class="navigation-links__link"><router-link to="/about" > About us</router-link></li>
+            <li class="navigation-links__link"><router-link to="/whatWeDo">What We Do</router-link></li>
+            <li class="navigation-links__link"><router-link to="/media">Media</router-link></li>
+            <li class="navigation-links__link"><router-link to="/contact" >Contact</router-link></li>
             <Button></Button>
         </ul>
     </nav>

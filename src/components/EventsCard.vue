@@ -31,7 +31,9 @@ const props = defineProps({
             <p class="card-content__paragraph">Next Events</p>
             <h3 class="card-content__title">{{ props.title }}</h3>
         </div>
-        <button class="card__btn"></button>
+        <router-link to="/events">
+            <button class="card__btn"></button>
+        </router-link>
     </div>
 </template>
 
@@ -42,18 +44,21 @@ const props = defineProps({
     display: flex;
     justify-content: space-between;
     background-color: $secondary-green;
-    align-items: start;
     padding: 40px;
+    align-items: center;
     gap: 24px;
     border-radius: 8px;
+    height: 191px;
     &-date{
         margin-top: -10px;
+        align-self: flex-start;
             &__num{
                 font-size: $heading2;
             }
         }
     &-content{
         width:381px;
+        align-self: flex-start;
         &__paragraph{
             @include text-line(right,0, 185px)
         }

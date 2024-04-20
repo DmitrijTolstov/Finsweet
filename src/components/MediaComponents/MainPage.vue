@@ -40,7 +40,9 @@ const blogsCard = [
                             <p class="news-content__text">
                                 Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
                             </p>
-                            <Button :bg-color="'#70C174'" :title="'Read more'"></Button>
+                            <router-link to="/blogs">
+                                <Button :bg-color="'#70C174'" :title="'Read more'"></Button>
+                            </router-link>
                         </div>
                 </div>
                 <div class="news-blogs">

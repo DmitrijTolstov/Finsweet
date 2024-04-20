@@ -10,18 +10,18 @@ import logo from './logo.vue';
                 <logo></logo>
                 <div class="footer-content_links">
                     <ul class="footer-content_links__team footer-content_links__connection">
-                        <li><a href=""> Our team</a></li>
-                        <li><a href=""> About us</a></li>
-                        <li><a href="">Team</a> </li>
-                        <li><a href="">What we do</a> </li>
-                        <li><a href="">Contact</a> </li>
+                        <li><router-link to="/about" >Our team</router-link></li>
+                        <li><router-link to="/about" >About us</router-link></li>
+                        <li><router-link to="/about" >Team</router-link> </li>
+                        <li><router-link to="/whatWeDo" >what We Do</router-link> </li>
+                        <li><router-link to="/contact" >Contacts</router-link> </li>
                     </ul>
                     <ul class="footer-content_links__more footer-content_links__connection">
-                        <li><a href="">More</a> </li>
-                        <li><a href="">Projects</a> </li>
-                        <li><a href="">Events</a> </li>
-                        <li><a href="">Donate</a> </li>
-                        <li><a href="">Blog</a> </li>
+                        <li><router-link to="/" >More</router-link> </li>
+                        <li><router-link to="/project" >Projects</router-link> </li>
+                        <li><router-link to="/events" >Events</router-link> </li>
+                        <li><router-link to="/donate" >Donate</router-link> </li>
+                        <li><router-link to="/blogs" >Blog</router-link> </li>
                     </ul>
                     <ul class="footer-content_links__connect footer-content_links__connection">
                         <li><a href="">Connect</a>  </li>

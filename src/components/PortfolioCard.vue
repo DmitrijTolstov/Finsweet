@@ -27,7 +27,10 @@ const cards = [
         <div  class="card-content">
             <h3 class="card-content__title">{{ item.title }}</h3>
             <p class="card-content__text">{{ item.text }}</p>
-            <Buttons :color="'#000000'" :bg-color="'#FFFFFF'" :title="'See more'"></Buttons>
+            <router-link to="/project" >
+                <Buttons :color="'#000000'" :bg-color="'#FFFFFF'" :title="'See more'"> </Buttons>
+            </router-link>
+            
         </div>
     </div>
 </template>

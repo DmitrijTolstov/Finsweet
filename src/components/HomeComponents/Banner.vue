@@ -11,7 +11,9 @@ import Buttons from '@/components//Buttons.vue';
                     Save the environment today for a better tomorrow
                 </h1>
                 <div class="banner-box_buttons">
+                    <router-link to="/whatWeDo">
                     <Buttons :color="'black'" :bgColor="'white'" :title="'What we do'"></Buttons>
+                    </router-link>
                     <Buttons class="video" :bgColor="'inherit'" :title="'Play Video'"></Buttons>
                 </div>
             </div>

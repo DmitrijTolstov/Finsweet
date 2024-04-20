@@ -1,5 +1,18 @@
 <script setup>
+import { ref } from 'vue';
 import Buttons from './Buttons.vue';
+import Popup from './Popup.vue';
+
+const popupTrigger = ref({
+    buttonTrigger: false,
+})
+
+
+const togglePopup = ((trigger) =>{
+    popupTrigger.value[trigger] = !popupTrigger.value[trigger]
+})
+
+
 </script>
 
 <template>
@@ -10,11 +23,12 @@ import Buttons from './Buttons.vue';
                     You can contribute to make the environment greener!
                 </h2>
                 <div class="donate-content_buttons">
-                    <Buttons :bgColor="'#70C174'" :title="'Join as a volunteer'"></Buttons>
+                    <Buttons @click="() => togglePopup('buttonTrigger')" :bgColor="'#70C174'" :title="'Join as a volunteer'"></Buttons>
                     <Buttons :bgColor="'white'" :color="'#1D2130'"></Buttons>
                 </div>
             </div>
         </section>
+        <Popup  :togglePopup="() => togglePopup('buttonTrigger') " v-if="popupTrigger.buttonTrigger" ></Popup>
     </div>
 </template>
 

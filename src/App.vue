@@ -1,11 +1,8 @@
 <script setup>
-import Home from './layouts/Home.vue';
-import About from './layouts/About.vue';
 </script>
 
 <template>
-    <!-- <Home></Home> -->
-    <About></About>
+    <router-view></router-view>
 </template>
 
 <style scoped lang="scss">

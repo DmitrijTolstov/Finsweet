@@ -1,15 +1,30 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import Buttons from './Buttons.vue';
 import Popup from './Popup.vue';
 
-const popupTrigger = ref({
+const popupTrigger = reactive({
     buttonTrigger: false,
+})
+
+const hiddenScroll = (() =>{
+
+    if(popupTrigger.buttonTrigger){
+        document.body.style.overflow = 'hidden'
+        document.body.style.paddingRight = '17px'
+    }else{
+        document.body.style.overflow = 'auto'
+        document.body.style.paddingRight = 0
+    }
+    
+    
 })
 
 
 const togglePopup = ((trigger) =>{
-    popupTrigger.value[trigger] = !popupTrigger.value[trigger]
+    popupTrigger[trigger] = !popupTrigger[trigger]
+
+    hiddenScroll()
 })
 
 

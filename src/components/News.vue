@@ -25,7 +25,10 @@ const cards = [
 ]
 
 const props = defineProps({
-    title:'Read Our News',
+    title:{
+        required: false,
+        default:'Read Our News',
+    },
     text:'',
     textShow: false
 })

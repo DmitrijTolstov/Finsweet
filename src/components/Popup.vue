@@ -1,31 +1,53 @@
 <script setup>
-import Buttons from '@/components/Buttons.vue';
-import { reactive } from 'vue';
+import Buttons from '@/components/Buttons.vue'
+import { ref } from 'vue';
+
+import { Form, Field, ErrorMessage  } from 'vee-validate';
 
 
-const formInputs = reactive(
+const formInputs = ref(
     {
         firstName:'',
         lastName:'',
         email:'',
-        message:''
     }
 )
 
-const bodyStyle = (() =>{
 
-    const oldWidth = document.body.clientWidth
 
-    document.body.style.overflow = 'hidden'
+const validateName = (value) =>{
 
-    const mewWidth = document.body.clientWidth
+        if(value.length === 0){
 
-    if(oldWidth < mewWidth ){
-        document.body.style.paddingRight = '17px'
+            return 'This field is required';
+        }
+      if(value.length < 4){
+
+        return 'This field must be a valid name';
+
+      }else{
+        
+        return true
+      }
+      
+
+}
+
+const  validateEmail = (value) =>{
+      if (!value) {
+
+        return 'This field is required';
+      }
+
+      const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+      if (!regex.test(value)) {
+
+        return 'This field must be a valid email';
+      }
+
+      return true;
     }
-
-
-})
 
 
 const props = defineProps({
@@ -33,11 +55,12 @@ const props = defineProps({
 })
 
 
+
+
 </script>
 
 <template>
-    <div class="popup"   >
-
+    <div class="popup" >
     <div class="join">
         <div @click="togglePopup()"  class="join-close">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,28 +74,31 @@ const props = defineProps({
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen varius enim in eros elementum tristique. 
         </p>
         
-        <form action="" class="form" method="post">
+        <Form class="form" method="post">
 
             <div class="form_names">
-                <div class="form_inputs">
-                    <label for="firstname">First Name</label>
-                    <input v-model="formInputs.firstname" required name="firstname" type="text">
+                <div class="form_fields">
+                    <label for="firstName">First Name</label>
+                    <Field :rules="validateName" name="firstName" type="text"/>
+                        <ErrorMessage name="firstName" />
                 </div>
-                <div class="form_inputs">
+                <div class="form_fields">
                     <label for="lastName">Last Name</label>
-                    <input v-model="formInputs.lastName" required name="lastName" type="text">
+                    <Field  :rules="validateName" required name="lastName" type="text"/>
+                    <ErrorMessage name="lastName" />
                 </div>
             </div>
-            <div class="form_inputs">
+            <div class="form_fields  form_fields__email">
                 <label for="email">Email</label>
-                <input v-model="formInputs.email" required name="email" type="email">
+                <Field :rules="validateEmail" required name="email" type="email"/>
+                <ErrorMessage name="email" />
             </div>
-            <div class="form_inputs">
-                <label @click="bodyStyle()" for="message">Message</label>
-                <textarea v-model="formInputs.message"  required name="message" placeholder="Type your Messege"></textarea>
+            <div class="form_fields">
+                <label  for="message">Message</label>
+                <textarea required name="message" placeholder="Type your Messege"></textarea>
             </div>
-            <Buttons  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn" disabled></Buttons>
-        </form>
+            <Buttons  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
+        </Form>
     </div>
 </div>
 
@@ -96,7 +122,7 @@ const props = defineProps({
 
 .join{
     padding:48px;
-    height: 680px;
+    height: 740px;
     width: 640px;
     border-radius:10px;
     z-index:100;
@@ -129,11 +155,16 @@ const props = defineProps({
         &_names{
             display:flex;
             gap: 32px;
+            height: 115px;
         }
-        &_inputs{
+        &_fields{
             display:flex;
             flex-direction: column;
             margin-bottom:32px;
+            width: 230px;
+            &__email{
+                height: 83px;
+            }
             textarea{
                 resize:none;
                 width:544px;
@@ -144,10 +175,28 @@ const props = defineProps({
                 padding:20px;
             }
             input{
-                border-bottom: 1px solid $border;
                 margin-top:16px;
+                margin-bottom: 8px;
+                &:focus{
+                    box-shadow: 0px 0px 9px 2px rgba(17, 126, 210, 0.4)
+                }
             }
         }
     }
+}
+
+.valid{
+    border-bottom:1px solid green;
+}
+.inValid{
+    border-bottom:1px solid red;
+}
+.default{
+    border-bottom:1px solid $border;
+}
+
+
+[role="alert"]{
+    color: red;
 }
 </style>

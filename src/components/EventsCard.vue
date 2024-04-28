@@ -41,31 +41,34 @@ const props = defineProps({
 @import '@/assets/vars.scss';
 
 .card{
+    max-width: clamp(400px, 45vw, 620px);
     display: flex;
     justify-content: space-between;
     background-color: $secondary-green;
-    padding: 40px;
+    padding-inline: clamp(20px, 2vw, 40px);
+    padding-block:  clamp(20px, 2vw, 40px);
     align-items: center;
     gap: 24px;
     border-radius: 8px;
-    height: 191px;
     &-date{
         margin-top: -10px;
         align-self: flex-start;
             &__num{
-                font-size: $heading2;
+                font-size: clamp(30px,3vw, $heading2);
             }
         }
     &-content{
         width:381px;
         align-self: flex-start;
         &__paragraph{
+            font-size: clamp(11px, 1vw, 16px);
             @include text-line(right,0, 185px)
         }
         &__title{
-            font-size: $heading3;
-            line-height: 42px;
+            font-size: clamp(15px, 2vw, $heading3);
+            line-height: 1.2;
             margin-top: 8px;
+            font-weight: 700;
         } 
     }
     &__btn{
@@ -75,6 +78,64 @@ const props = defineProps({
         border-radius: 50%;
         margin: auto;
     }
+}
+
+
+@media (max-width:1310px){
+
+    .card{
+        
+     &-date{
+         margin-top: -6px;
+         }
+     &-content{
+         align-self: flex-start;
+         &__title{
+             line-height: 1.2;
+             margin-top: 8px;
+         } 
+     }
+    
+}
+}
+
+@media (max-width:850px){
+
+.card{
+ &-date{
+     margin-top: -6px;
+     }
+ &-content{
+     align-self: flex-start;
+     &__paragraph{
+            @include text-line(right,0, 65px)
+        }
+     &__title{
+         line-height: 1.2;
+         margin-top: 8px;
+     } 
+ }
+
+}
+}
+
+@media (max-width:430px){
+
+.card{
+    text-align: center;
+    border-radius: 50%;
+    display: block;
+    div{
+            margin-bottom: 15px;
+        }
+    &-content{
+        max-width: clamp(170px, 30vw, 380px) ;
+     &__paragraph{
+        margin-left: 0;
+        position: static;
+        }
+ }
+}
 }
 
 </style>

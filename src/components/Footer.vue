@@ -7,24 +7,26 @@ import logo from './logo.vue';
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <logo></logo>
+                <div class="footer-content_logo">
+                    <logo></logo>
+                </div>
                 <div class="footer-content_links">
                     <ul class="footer-content_links__team footer-content_links__connection">
-                        <li><router-link to="/about" >Our team</router-link></li>
+                        <li><p>Our team</p></li>
                         <li><router-link to="/about" >About us</router-link></li>
                         <li><router-link to="/about" >Team</router-link> </li>
                         <li><router-link to="/whatWeDo" >what We Do</router-link> </li>
                         <li><router-link to="/contact" >Contacts</router-link> </li>
                     </ul>
                     <ul class="footer-content_links__more footer-content_links__connection">
-                        <li><router-link to="/" >More</router-link> </li>
+                        <li><p>More</p></li>
                         <li><router-link to="/project" >Projects</router-link> </li>
                         <li><router-link to="/events" >Events</router-link> </li>
                         <li><router-link to="/donate" >Donate</router-link> </li>
                         <li><router-link to="/blogs" >Blog</router-link> </li>
                     </ul>
                     <ul class="footer-content_links__connect footer-content_links__connection">
-                        <li><a href="">Connect</a>  </li>
+                        <li><p href="">Connect</p>  </li>
                         <li><a href="">Facebook</a> </li>
                         <li><a href="">Instagram</a> </li>
                         <li><a href="">Twitter</a> </li>
@@ -55,7 +57,6 @@ import logo from './logo.vue';
     &-content{
         display: flex;
         justify-content: space-between;
-        align-items: start;
         &_links{
             display: flex;
             gap: 88px;
@@ -72,14 +73,14 @@ import logo from './logo.vue';
         }
         &_subscribe{
             &__title{
-                font-size: $heading2;
+                font-size: clamp(25px,4vw,$heading2);
                 max-width: 440px;
                 margin-bottom: 32px;
             }
         }
         &_email{
             input{
-                width: 69%;
+                max-width: 69%;
                 border: 1px solid rgba($off-white,.3);
                 border-radius: 4px;
                 padding: 11px 7px;
@@ -90,4 +91,27 @@ import logo from './logo.vue';
         }
     }
 }
+
+
+
+@media(max-width:850px){
+
+    .footer{
+    padding-block: 45px;
+    &-content{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        &_logo{
+            display: none;
+        }
+        &_links{
+            gap: 30px;
+            }
+        }
+    }
+}
+
+
+
 </style>

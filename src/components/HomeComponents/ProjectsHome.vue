@@ -28,7 +28,7 @@ import PortfolioCard from '../PortfolioCard.vue';
     margin-bottom: 96px;
     &-content{
         &__title{
-            font-size: $heading2;
+            font-size: clamp(25px, 4vw ,$heading2);
             max-width: 640px;
             margin-top: 32px;
         }
@@ -43,5 +43,23 @@ import PortfolioCard from '../PortfolioCard.vue';
 
 .text-line{
     @include text-line(left);
+}
+
+
+@media(max-width:850px){
+    .projects{
+    margin-block: 45px;
+    &-content{
+        &__title{
+        }
+    }
+    
+    &-portfolio{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
 }
 </style>

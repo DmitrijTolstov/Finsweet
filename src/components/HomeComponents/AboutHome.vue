@@ -34,7 +34,7 @@ import Supporters from '../Supporters.vue';
                     </a>
                 </div>
             </div>
-            <Supporters></Supporters>
+            <Supporters class="about-supporters"></Supporters>
         </section>
     </div>
 </template>
@@ -61,6 +61,7 @@ import Supporters from '../Supporters.vue';
         }
         &_video{
             position: relative;
+            
             &__link{
                 position: absolute;
                 top: 50%;
@@ -77,9 +78,61 @@ import Supporters from '../Supporters.vue';
             }
         }
     }
+
+    &-supporters{
+        display: none;
+    }
 }
 
 .text-line{
     @include text-line(left);
+}
+
+
+@media(max-width:900px){
+.about{
+
+    &-contents{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    &-content{
+        margin-right: 30px;
+        &_title{
+            font-size: clamp(25px,5vw,$heading2);
+            margin-block: 20px;
+        }
+        &_text{
+            margin-bottom: 15px;
+        }
+        &_left{
+            margin-bottom: 60px;
+            margin-left: 0;
+        }
+    }
+}
+}
+
+@media(max-width:450px){
+    .about{
+        &-contents{
+            flex-wrap: wrap;
+        }
+
+&-content{
+    &_left{
+        margin-bottom: 20px;
+    }
+    &_video{
+        img{
+            max-width: 100%;
+        }
+    }
+}
+}
+
+
+
 }
 </style>

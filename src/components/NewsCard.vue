@@ -47,4 +47,14 @@ const props = defineProps({
         color: $secondary-text;
     }
 }
+
+@media (max-width:1310px){
+
+    .card{
+        &__image{
+            width: 100%;
+        }
+    }
+}
+
 </style>

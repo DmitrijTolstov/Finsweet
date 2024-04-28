@@ -62,7 +62,7 @@ const props = defineProps({
 .news{
     margin-bottom: 96px;
     &__title{
-        font-size: $heading2;
+        font-size: clamp(25px,4vw,$heading2);
     }
     &-cards{
         display: flex;
@@ -73,5 +73,18 @@ const props = defineProps({
         max-width: 450px;
         margin: 16px auto 48px;
     }
+}
+
+
+@media(max-width:450px){
+
+    .news{
+        margin-bottom: 45px;
+        &-cards{
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+    }
+
 }
 </style>

@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 import Button from './Buttons.vue';
 </script>
 
@@ -18,7 +17,6 @@ import Button from './Buttons.vue';
 
 <style scoped lang='scss'>
 .navigation{
-    padding: 12px 0;
     &-links{
         display: flex;
         align-items: center;

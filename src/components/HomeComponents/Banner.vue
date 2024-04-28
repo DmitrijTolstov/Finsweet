@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 import Buttons from '@/components//Buttons.vue';
 </script>
 
@@ -14,7 +13,7 @@ import Buttons from '@/components//Buttons.vue';
                     <router-link to="/whatWeDo">
                     <Buttons :color="'black'" :bgColor="'white'" :title="'What we do'"></Buttons>
                     </router-link>
-                    <Buttons class="video" :bgColor="'inherit'" :title="'Play Video'"></Buttons>
+                    <Buttons class="video"  :title="'Play Video'"></Buttons>
                 </div>
             </div>
                 <div class="banner-statistics">
@@ -32,6 +31,7 @@ import Buttons from '@/components//Buttons.vue';
     background-image: url('@/assets/images/banner.png');
     background-size: cover;
     background-position: center;
+    margin-block-start: -96px;
     padding: 128px 110px 64px 110px;
     margin-bottom: 96px;
     &-box{
@@ -57,14 +57,52 @@ import Buttons from '@/components//Buttons.vue';
 
 .video{
     margin-left: 24px;
-    background-image: url('../assets/images/play.svg');
+    background-image: url('src/assets/images/play.svg');
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: -100px;
+    background-color: inherit;
+    text-align: center;
+    transition: all .3s linear;
+    min-height:  43px;
+    &:hover{
+        background-color: rgba(255,255,255,.1);
+        background-position: center;
+        font-size:0px;
+    }
 }
 
 .line{
     width: 70%;
     height: 1px;
     background-color:$border
+}
+
+
+@media(max-width:900px){
+
+    .banner{
+        padding: 60px 10px 64px 10px;
+        margin-bottom: 60px;
+        &-box{
+            padding-bottom: 90px;
+
+            &__text{
+
+                font-size: clamp(30px, 6vw, $home-heading);
+            }
+
+            &_buttons{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                .video{
+                    margin-left: 0;
+                    min-width: 147px;
+                }
+            }
+        }
+    }
+
+
 }
 </style>

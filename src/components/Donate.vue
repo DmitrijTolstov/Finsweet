@@ -51,16 +51,16 @@ const togglePopup = ((trigger) =>{
 @import '@/assets/vars.scss';
 .donate{
     background: center no-repeat url(src/assets/images/background-donate.png);
-    padding: 93px 0;
+    padding: 93px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    margin: 96px 0;
+    margin-block: 96px;
     &-content{
         text-align: center;
         &__title{
-            font-size: $heading2;
+            font-size: clamp(25px,4vw,$heading2);
             color: $white;
             max-width: 631px;
         }
@@ -70,5 +70,16 @@ const togglePopup = ((trigger) =>{
             gap: 32px;
         }
     }
+}
+
+
+@media(max-width:450px){
+
+    .donate{
+        margin-block: 45px;
+        padding-block: 55px;
+    }
+
+
 }
 </style>

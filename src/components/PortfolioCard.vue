@@ -44,19 +44,35 @@ const cards = [
     background-size: cover;
     border-radius: 12px;
     text-align: left;
+    transition: transform .3s linear;
+    &:hover{
+        transform: scale(1.01);
+    }
     &:not(:last-child){
             margin-right: 23px;
         }
     &-content{ 
         color: $white;
         &__title{
-            font-size: $heading3;
+            font-size: clamp(16px,4vw, $heading3);
         }
         &__text{
+            font-size: clamp(13px,3vw, 16px);
             margin: 16px 0 64px 0;
+            line-height: 20px;
         }
     }
 }
 
+
+
+@media(max-width:850px){
+
+    .card{
+        &:not(:last-child){
+            margin-right: 0;
+        }
+}
+}
 
 </style>

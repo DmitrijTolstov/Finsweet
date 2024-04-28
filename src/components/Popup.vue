@@ -10,6 +10,7 @@ const formInputs = ref(
         firstName:'',
         lastName:'',
         email:'',
+        message:''
     }
 )
 
@@ -54,6 +55,24 @@ const props = defineProps({
     togglePopup: Function
 })
 
+const send = (() =>{
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            firstName: formInputs.value.firstName,
+            lastName: formInputs.value.lastName,
+            email: formInputs.value.email,
+            message: formInputs.value.message,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+})
+
 
 
 
@@ -74,30 +93,30 @@ const props = defineProps({
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen varius enim in eros elementum tristique. 
         </p>
         
-        <Form class="form" method="post">
+        <Form class="form">
 
             <div class="form_names">
                 <div class="form_fields">
                     <label for="firstName">First Name</label>
-                    <Field :rules="validateName" name="firstName" type="text"/>
+                    <Field :rules="validateName" v-model="formInputs.firstName" name="firstName" type="text"/>
                         <ErrorMessage name="firstName" />
                 </div>
                 <div class="form_fields">
                     <label for="lastName">Last Name</label>
-                    <Field  :rules="validateName" required name="lastName" type="text"/>
+                    <Field  :rules="validateName" v-model="formInputs.lastName" required name="lastName" type="text"/>
                     <ErrorMessage name="lastName" />
                 </div>
             </div>
             <div class="form_fields  form_fields__email">
                 <label for="email">Email</label>
-                <Field :rules="validateEmail" required name="email" type="email"/>
+                <Field :rules="validateEmail" v-model="formInputs.email" required name="email" type="email"/>
                 <ErrorMessage name="email" />
             </div>
             <div class="form_fields">
                 <label  for="message">Message</label>
-                <textarea required name="message" placeholder="Type your Messege"></textarea>
+                <textarea required name="message" v-model="formInputs.message" placeholder="Type your Messege"></textarea>
             </div>
-            <Buttons  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
+            <Buttons @click.prevent="send()"  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
         </Form>
     </div>
 </div>
@@ -183,16 +202,6 @@ const props = defineProps({
             }
         }
     }
-}
-
-.valid{
-    border-bottom:1px solid green;
-}
-.inValid{
-    border-bottom:1px solid red;
-}
-.default{
-    border-bottom:1px solid $border;
 }
 
 

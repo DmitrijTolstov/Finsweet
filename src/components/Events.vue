@@ -44,11 +44,22 @@ const props = defineProps({
         display: flex;
         margin-bottom: 136px;
         margin-top: 48px;
+        gap: 15px;
         justify-content: space-between;
-        gap: 24px;
     }
     &__title{
         font-size: 40px;
+    }
+}
+
+
+@media(max-width:850px){
+    .events{
+        &-cards{
+            flex-direction: column;
+            align-items: center;
+            justify-content: baseline;
+        }
     }
 }
 

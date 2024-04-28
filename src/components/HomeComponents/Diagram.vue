@@ -62,22 +62,23 @@
 .donation{
     background-color: $black;
     color: white;
-    padding: 90px 0;
-    margin-bottom: 96px;
-
+    padding-block: 90px;
     &-container{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     &-content{
         max-width: 611px;
         &__title{
-            font-size: $heading2;
+            font-size: clamp(25px, 4vw,$heading2);
             margin-bottom: 16px;
         }
         &__text{
+            font-size: clamp(13px, 3vw, 16px);
             color: rgba($color: white, $alpha: .3);
             margin-bottom: 32px;
         }
@@ -126,9 +127,9 @@
     }
     &-diagram{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         position: relative;
+        margin-left: auto;
+        max-width: 100%;
         &__logo{
             position: absolute;
             top: 50%;
@@ -168,4 +169,27 @@
     }
     }
 }
+
+@media(max-width:450px){
+
+    .donation{
+        padding-block: 40px;
+       &-content{
+
+        &__procents{
+            display: block;
+            margin-left: 24px;
+            li{
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+        }
+       }
+        }
+
+
+
+}
+
+
 </style>

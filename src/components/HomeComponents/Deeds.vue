@@ -71,12 +71,13 @@
             margin-left: 96px;
         }
         &_title{
-            font-size: $heading2;
+            font-size: clamp(25px , 5vw, $heading2);
             font-weight: 700;
             margin: 32px 0 16px 0;
         }
         &_text{
             margin-bottom: 32px;
+            font-size: clamp(13px, 2vw,16px);
             color: $secondary-text;
         }
         &_list{
@@ -85,7 +86,7 @@
             padding-left: 24px;
             &__item{
                 margin-bottom: 14px;
-                font-size: $heading3;
+                font-size: clamp(16px, 2vw,$heading3);
                 font-weight: 700;
                 &:nth-child(1){
                     background: url(@/assets/images/listIcon1.svg) left center no-repeat;
@@ -105,6 +106,7 @@
                 }
             }
             &__text{
+                font-size: clamp(13px, 2vw, 16px);
                 padding-left: 52px;
                 color: $secondary-text;
                 &:not(:last-child){
@@ -119,4 +121,26 @@
 .text-line{
     @include text-line(left);
 }
+
+@media(max-width:850px){
+    .deeds{
+        margin-top: 0;
+        padding-block: 45px;
+        &-content{
+            margin-right: 0;
+
+            &_left{
+                margin-left: 0;
+            }
+
+            &_image{
+                display: none;
+            }
+        }
+    }
+
+
+}
+
+
 </style>

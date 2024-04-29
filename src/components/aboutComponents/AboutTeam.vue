@@ -72,11 +72,12 @@ const cards = [
     margin: 96px 0;
     text-align: center;
     &__title{
-        font-size: $heading2;
+        font-size: clamp(35px,4vw,$heading2);
         font-weight: 700;
         margin-top: 16px;
     }
     &__text{
+        font-size: clamp(13px,3vw,16px);;
         opacity: .4;
         max-width: 519px;
         margin: 0 auto;
@@ -84,9 +85,25 @@ const cards = [
     &-cards{
         display: flex;
         gap: 32px;
-        align-items: center;
         flex-wrap: wrap;
         margin-top: 46px;
     }
+}
+
+@media(max-width:850px){
+    .team{
+    margin-block: 45px;
+    text-align: center;
+    &-cards{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 23px;
+    }
+}
+
+
+
 }
 </style>

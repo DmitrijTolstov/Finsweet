@@ -14,7 +14,7 @@ import Supporters from '@/components/Supporters.vue';
                 Know about us
                 </p>
                 <h2 class="about-content__title">
-                    We are a nonprofit team <hr> working worldwide
+                    We are a nonprofit team  working worldwide
                 </h2>
                 </div>
                 <aside class="about-content_secondary">
@@ -29,7 +29,7 @@ import Supporters from '@/components/Supporters.vue';
             <div class="about-content about-content_down">
                 <div class="about-content_banner">
                     <img class="about-content_banner__play" src="@/assets/images/play.svg" alt="">
-                    <img src="@/assets/images/background-about-banner.png" alt="">
+                    <img class="about-content_banner__image" src="@/assets/images/background-about-banner.png" alt="">
                 </div>
                 <div class="about-content_business">
                     <div class="about-content_business_mission about-content_business__width">
@@ -55,7 +55,9 @@ import Supporters from '@/components/Supporters.vue';
                         </p>
                     </div>
                 </div>
-                <Supporters></Supporters>
+                <div class="supporters">
+                    <Supporters></Supporters>
+                </div>
                 <AwardsAbout></AwardsAbout>
             </div>
         </div>
@@ -101,6 +103,9 @@ import Supporters from '@/components/Supporters.vue';
                 height: 64px;
                 cursor: pointer;
             }
+            &__image{
+                max-width: 100%
+            }
         }
         &_top{
             display: flex;
@@ -110,15 +115,14 @@ import Supporters from '@/components/Supporters.vue';
         }
         &__supTitle{
             margin-bottom: 16px;
-            font-size: $heading4;
             font-weight: 700;
         }
         &__text{
-            max-width: 496px;
+            font-size: clamp(13px,3vw,16px);
             color: $secondary-text;
         }
         &__title{
-            font-size: $heading2;
+            font-size: clamp(25px, 3.5vw,$heading2);
             font-weight: 700;
             margin-left: 96px;
             margin-top: 32px;
@@ -132,17 +136,19 @@ import Supporters from '@/components/Supporters.vue';
             justify-content: space-around;
             align-items: center;
             &__title{
-                font-size: $heading3;
+                font-size: clamp(15px,4vw,$heading3);
                 margin-bottom: 6px;
                 font-weight: 700;
             }
             &__supTitle{
                 font-weight: 700;
                 text-transform: uppercase;
+                font-size: clamp(14px, 3vw, 20px);
                 margin-bottom: 16px;
                 color: $secondary-text;
             }
             &__text{
+                font-size: clamp(13px,3vw,16px);
                 color: $secondary-text;
             }
             &__width{
@@ -150,5 +156,69 @@ import Supporters from '@/components/Supporters.vue';
             }
         }
     }
+}
+
+
+@media(max-width:850px){
+
+    .about{
+    padding-bottom: 0;
+    &-bg{
+        &::after{
+        top: 45%; 
+        height: 50%;
+        }
+    }
+    
+    &-content{
+        gap: 20px;
+        
+        &_top{
+            margin-bottom: 45px;
+        }
+        &__title{
+            margin-left: 0;
+            margin-top: 32px;
+        }
+        &_down{
+            overflow: hidden;
+        }
+        &_business{
+            margin-top: 45px;
+            gap: 20px;
+            
+        }
+    }
+}
+.supporters{
+    display: none;
+}
+
+}
+
+
+@media(max-width:450px){
+
+.about{
+
+    &-content{
+        flex-direction: column;
+        &_business{
+            flex-direction: column
+        }
+        &_banner{
+            &__play{
+                width: 34px;
+                height: 34px;
+            }
+            &__image{
+                max-width: 100%
+            }
+        }
+    }
+}
+
+
+
 }
 </style>

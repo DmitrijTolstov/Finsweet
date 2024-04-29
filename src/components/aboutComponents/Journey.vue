@@ -60,10 +60,11 @@
                 line-height: 19px;
             }
             &__title{
-                font-size: $heading2;
+                font-size: clamp(25px,3vw,$heading2);
                 margin-bottom: 16px;
             }
             &__text{
+                font-size: clamp(13px,3vw,16px);
                 margin-bottom: 32px;
                 opacity: .5;
             }
@@ -72,10 +73,11 @@
                 gap: 32px;
                 ul{
                     li{
-                        font-size: 24px;
+                        font-size: clamp(16px,4vw,24px);
                         margin-bottom: 5px;
                     }
                     p{
+                        font-size: clamp(13px,3vw,16px);
                         opacity: .5;
                     }
                 }
@@ -83,4 +85,28 @@
     }
 }
 }
+
+
+@media(max-width:850px){
+
+
+    .journey{
+    margin-block: 45px;
+    &-container{
+        padding: 20px;
+        gap: 20px;
+        flex-direction: column;
+    &_images{
+        img{
+            max-width: 100%
+        }
+    }
+}
+}
+
+
+
+}
+
+
 </style>

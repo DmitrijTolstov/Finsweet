@@ -56,9 +56,24 @@ const awards = [
         margin-top: 48px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     &__title{
-        font-size: $heading2;
+        font-size: clamp(25px,3vw,$heading2);
     }
+}
+
+
+@media(max-width:850px){
+
+.awards{
+    margin-top: 45px;
+    &-component{
+        margin-top: 24px;
+        justify-content: center;
+        gap: 35px;
+    }
+}
+
 }
 </style>

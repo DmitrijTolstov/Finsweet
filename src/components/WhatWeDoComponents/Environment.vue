@@ -59,13 +59,27 @@ const list = [
     padding: 96px;
     background-color: $third-green;
     &__heading{
-        font-size: $heading2;
+        font-size: clamp(35px,3vw,$heading2);
         font-weight: 700;
     }
     &-content{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 48px;
     }
+}
+
+
+@media(max-width:850px){
+
+.environment{
+    padding: 20px;
+    &-content{
+        gap: 20px;
+    }
+}
+
+
 }
 </style>

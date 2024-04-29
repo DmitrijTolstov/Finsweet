@@ -38,4 +38,11 @@ const props = defineProps({
     flex-direction: column;
     gap:7px;
 }
+
+@media(max-width:850px){
+    .award{
+    display: block;
+}
+
+}
 </style>

@@ -40,10 +40,11 @@ const props = defineProps({
     &__title{
         margin-top: 16px;
         margin-bottom: 8px;
-        font-size: $heading4;
+        font-size: clamp(16px,2vw,$heading4);
         font-weight: 700;
     }
     &__text{
+        font-size: clamp(13px,1.5vw,16px);
         color: $secondary-text;
     }
 }
@@ -55,6 +56,12 @@ const props = defineProps({
             width: 100%;
         }
     }
+}
+
+@media (max-width:850px){
+
+.card{
+}
 }
 
 </style>

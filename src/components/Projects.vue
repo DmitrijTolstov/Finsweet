@@ -30,7 +30,7 @@ import PortfolioCard from '@/components/PortfolioCard.vue';
         opacity: .6;
     }
     &_title{
-        font-size:$heading2;
+        font-size:clamp(35px,4vw,$heading2);
         font-weight:700;
         margin-top:16px;
     }
@@ -39,4 +39,5 @@ import PortfolioCard from '@/components/PortfolioCard.vue';
         margin-top:64px;
     }
 }
+
 </style>

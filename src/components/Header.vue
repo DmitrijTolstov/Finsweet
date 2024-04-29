@@ -89,6 +89,7 @@ const overlayStyle = computed(() =>{
 
 @media(max-width:850px){
     .header{
+        margin-bottom: 45px;
         &-navigation{
             display: none;
         }

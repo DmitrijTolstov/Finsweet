@@ -26,20 +26,34 @@ const props = defineProps({
 .list{
   display: flex;
   margin-top: 64px;
-  align-items: baseline;
   &-image{
     margin-right: 30px;
   }  
   &-content{
     max-width: 332px;
     &_heading{
-      font-size: 24px;
+      font-size: clamp(18px,2vw,24px);
       font-weight: 700;
       margin-bottom: 6px;
     }
     &_text{
+      font-size: clamp(13px,3vw,16px);
       opacity: .4;
     }
   }
+}
+
+
+
+@media(max-width:850px){
+
+.list{
+  margin-top: 20px;
+  &-content{
+    max-width: 300px
+  }
+}
+
+
 }
 </style>

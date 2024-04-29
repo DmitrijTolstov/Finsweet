@@ -71,7 +71,7 @@
             margin-left: 96px;
         }
         &_title{
-            font-size: clamp(25px , 5vw, $heading2);
+            font-size: clamp(25px , 4vw, $heading2);
             font-weight: 700;
             margin: 32px 0 16px 0;
         }

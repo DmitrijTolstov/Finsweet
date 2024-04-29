@@ -19,9 +19,6 @@ import Supporters from '../Supporters.vue';
                     <p class="about-content_text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique
                     </p>
-                    <p class="about-content_text">
-                        ‍Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-                    </p>
                     <router-link to="/about" >
                         <Buttons :title="'Learn more'" :bgColor="'#70C174'"></Buttons>
                     </router-link>
@@ -96,11 +93,10 @@ import Supporters from '../Supporters.vue';
         margin-right: 0;
         margin-bottom: 40px;
     }
-
     &-content{
         margin-right: 30px;
         &_title{
-            font-size: clamp(25px,5vw,$heading2);
+            font-size: clamp(25px,4vw,$heading2);
             margin-block: 20px;
         }
         &_text{
@@ -109,6 +105,11 @@ import Supporters from '../Supporters.vue';
         &_left{
             margin-bottom: 60px;
             margin-left: 0;
+        }
+        &_video{
+            img{
+                max-width: 100%
+            }            
         }
     }
 }

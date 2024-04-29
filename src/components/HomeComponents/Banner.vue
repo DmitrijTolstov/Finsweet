@@ -82,7 +82,7 @@ import Buttons from '@/components//Buttons.vue';
 
     .banner{
         padding: 60px 10px 64px 10px;
-        margin-bottom: 60px;
+        margin-block: -45px 60px;
         &-box{
             padding-bottom: 90px;
 

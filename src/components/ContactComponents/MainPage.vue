@@ -92,7 +92,7 @@ const offices = [
             margin-bottom: 32px;
         }
         &__title{
-            font-size: $heading2;
+            font-size: clamp(35px,4vw,$heading2);
             margin-bottom: 34px;
             font-weight: 700;
         }
@@ -112,5 +112,39 @@ const offices = [
 }
 .pl-96{
     padding-left: 96px
+}
+
+
+
+@media(max-width:850px){
+
+    .contact{
+    margin-bottom: 45px;
+    &-container{
+        gap: 10px;
+    }
+    &-content{
+        &__heading{
+            margin-bottom: 16px;
+        }
+        &__text{
+            opacity: .4;
+            margin-bottom: 32px;
+        }
+    }
+    &-blogs_links{
+        margin-block: 32px 45px;
+    }
+}
+
+
+
+
+
+.pl-96{
+    padding-left: 0;
+}
+
+
 }
 </style>

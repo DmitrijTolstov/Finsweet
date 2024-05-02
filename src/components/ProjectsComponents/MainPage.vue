@@ -68,17 +68,18 @@ import OurBusiness from '@/components/ProjectsComponents/OurBusiness.vue';
         margin-bottom:32px;
     }
     &__title{
-        font-size: $heading1;
+        font-size: clamp(35px,4vw,$heading1);
         font-weight:700;
         margin-bottom:32px;
     }
     &__text{
+        font-size: clamp(13px,2vw,16px);
         margin-bottom:32px;
         opacity:.5;
     }
     &-news{
         &__title{
-            font-size: $heading2;
+            font-size: clamp(25px,4vw,$heading2);
             font-weight: 700;
             margin-top:32px;
             margin-bottom:16px;
@@ -95,5 +96,29 @@ import OurBusiness from '@/components/ProjectsComponents/OurBusiness.vue';
 .ourBusiness{
     background-color: $off-white ;
     padding: 96px 0;
+}
+
+
+
+@media(max-width:850px){
+
+.projects{
+    &-container{
+        img{
+            max-width: 100%;
+            min-height: 200px;
+        }
+        
+    }
+    &__heading{
+        @include text-line(left);
+        margin-bottom:16px;
+    }
+}
+.ourBusiness{
+    background-color: $off-white ;
+    padding: 45px 0;
+}
+
 }
 </style>

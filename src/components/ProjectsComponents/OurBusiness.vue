@@ -58,10 +58,29 @@ const business = [
             gap: 26px;
         }
         &__title{
-            font-size:24px;
+            font-size:clamp(16px,4vw,24px);
             font-weight:700;
             margin-bottom:8px;
         }
+        &__text{
+            font-size: clamp(13px,3vw,16px);
+        }
     }
+}
+
+
+@media(max-width:850px){
+
+.ourBusiness{
+    &-container{
+        gap: 20px;
+    }
+    &-content{
+        &__header{
+            margin-left: -46px;
+        }
+    }
+}
+
 }
 </style>

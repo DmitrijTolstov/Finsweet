@@ -41,6 +41,7 @@ import Buttons from '@/components/Buttons.vue';
     gap:32px;
     max-width: 768px;
     margin: 0 auto;
+    padding-inline: 10px;
     input{
         border-bottom:1px solid #E5E5E5;
         min-width:368px
@@ -55,7 +56,7 @@ import Buttons from '@/components/Buttons.vue';
         }
     textarea{
         border: 1px solid #E5E5E5;
-        min-width: 768px;
+        width: 100%;
         min-height: 156px;
         padding:20px;
         outline: none;  
@@ -71,4 +72,28 @@ import Buttons from '@/components/Buttons.vue';
     display:flex;
     justify-content: space-between;
 }
+
+
+@media(max-width:850px){
+    .form{
+    display:block;
+    input{
+        width:100%;
+        }
+        &-btn{
+            width: auto;
+        }
+    textarea{
+        width: 100%;
+    }
+}
+
+}
+
+.space-between{
+    display:block;
+}
+
+
+
 </style>

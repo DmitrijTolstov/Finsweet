@@ -53,15 +53,10 @@ const props = defineProps({
 
     .card{
         &__image{
-            width: 100%;
+            max-width: 100%;
         }
     }
 }
 
-@media (max-width:850px){
-
-.card{
-}
-}
 
 </style>

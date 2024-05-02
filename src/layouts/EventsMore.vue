@@ -72,14 +72,16 @@ import Events from '@/components/Events.vue';
     &-heading{
         margin: 0 auto;
         &__address{
+            font-size: clamp(13px,3vw, 16px);
             margin-right: 48px;
             margin-left: 8px;
         }
         &__date{
+            font-size: clamp(13px,3vw, 16px);
             margin-left: 8px;
         }
         &__title{
-            font-size: $heading1;
+            font-size: clamp(40px, 4vw,$heading1);
             font-weight: 700;
         }
         &__links{
@@ -90,17 +92,19 @@ import Events from '@/components/Events.vue';
         }
     }
     &-container{
-        max-width: 768px;
+        max-width: 788px;
         margin: 0 auto;
+        padding-inline: 10px;
 
     }
     &-about{
         &__title{
-            font-size: $heading2;
+            font-size: clamp(35px,4vw,$heading2);
             font-weight: 700;
             margin-bottom: 32px;
         }
         &__text{
+            font-size: clamp(13px,3vw,16px);
             color: $secondary-text;
             margin-top: 32px;
             &:not(:last-child){
@@ -108,6 +112,49 @@ import Events from '@/components/Events.vue';
             }
         }
     }
+}
+
+@media(max-width:850px){
+
+.events{
+   
+   &-bg{
+       margin-bottom: 45px;
+   }
+   &-heading{
+       &__address{
+           margin-right: 20px;
+       }
+       &__date{
+           margin-left: 8px;
+       }
+       &__links{
+           margin-top: 20px;
+           padding-bottom: 45px;
+           align-items: center;
+       }
+   }
+   &-container{
+       max-width: 768px;
+       margin: 0 auto;
+
+   }
+   &-about{
+    &__title{
+        margin-bottom: 10px;
+    }
+       &__text{
+           color: $secondary-text;
+           margin-top: 16px;
+           &:not(:last-child){
+               margin-bottom: 16px;
+           }
+       }
+       &__image{
+        max-width: 100%;
+       }
+   }
+}
 }
 
 </style>

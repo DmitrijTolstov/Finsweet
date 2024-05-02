@@ -88,12 +88,13 @@ import Header from '@/components/Header.vue';
             color: $primary-text;
         }
         &__title{
-            font-size: $heading1;
+            font-size: clamp(40px,4vw,$heading1);
             font-weight: 700;
             margin-bottom: 16px;
             color: $primary-text;
         }
         &__text{
+            font-size: clamp(13px,3vw,16px);
             margin-bottom: 48px;
             color: $secondary-text;
         }
@@ -102,11 +103,12 @@ import Header from '@/components/Header.vue';
     &-main{
         &__title{
             color: $primary-text;
-            font-size: $heading2;
+            font-size: clamp(35px,4vw,$heading2);
             margin-bottom: 32px;
             font-weight: 700;
         }
         &__text{
+            font-size: clamp(13px,3vw,16px);
             margin-bottom: 32px;
             &:not(:last-child){
                 margin-bottom: 16px;
@@ -118,7 +120,7 @@ import Header from '@/components/Header.vue';
         margin-bottom: 96px;
         &__title{
             color: $primary-text;
-            font-size: $heading3;
+            font-size: clamp(25px,4vw, $heading3);
             font-weight: 700;
             margin-bottom: 16px;
         }
@@ -135,10 +137,61 @@ import Header from '@/components/Header.vue';
         }
     }
     &-container{
-        max-width: 1024px;
+        max-width: 1034px;
         margin: 0 auto;
+        padding-inline: 10px;
     }
 }
+
+
+@media(max-width:850px){
+
+    .blogs{
+    &-header{
+        margin-bottom: 45px;
+        &__date{
+            margin-bottom: 15px;
+        }
+        &__text{
+            margin-bottom: 13px;
+        }
+        &__img{
+            max-width: 100%;
+            min-height: 200px;
+        }
+    }
+    &-main{
+        &__title{
+            margin-bottom: 15px;
+        }
+        &__text{
+            margin-bottom: 13px;
+        }
+
+    }
+    &-secondary{
+        margin-bottom: 45px;
+        &__lists{
+            margin: 16px 0 32px 30px ;
+        }
+        &__list{
+            list-style-type: disc;
+        }
+        &__text{
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+
+
+
+
+}
+
+
 
 
 </style>

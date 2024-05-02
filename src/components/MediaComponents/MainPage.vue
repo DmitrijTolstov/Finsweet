@@ -81,7 +81,7 @@ const blogsCard = [
             margin-bottom: 32px;
         }
         &__title{
-            font-size: $heading2;
+            font-size: clamp(35px,4vw,$heading2);
             margin-bottom: 34px;
             font-weight: 700;
         }
@@ -108,4 +108,36 @@ const blogsCard = [
 .pl-96{
     padding-left: 96px
 }
+
+
+@media(max-width:850px){
+
+    .news{
+        margin-bottom: 45px;
+    &-container{
+        flex-direction: column;
+    }
+    &-content{
+        &__heading{
+        }
+        &__title{
+        }
+        &__text{
+        }
+    }
+    &-container{
+        gap: 45px;
+    }
+    &-blogs{
+        margin-bottom: 45px;
+        &-container{
+        }
+    }
+}
+
+}
+.pl-96{
+    padding-left: 0;
+}
+
 </style>

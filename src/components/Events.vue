@@ -55,10 +55,12 @@ const props = defineProps({
 
 @media(max-width:850px){
     .events{
+        margin-block: 45px;
         &-cards{
             flex-direction: column;
             align-items: center;
             justify-content: baseline;
+            margin-bottom: 0;
         }
     }
 }

@@ -1,6 +1,6 @@
 <script setup>
 import Buttons from '@/components/Buttons.vue'
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 import { Form, Field, ErrorMessage  } from 'vee-validate';
 
@@ -14,23 +14,13 @@ const formInputs = ref(
     }
 )
 
-
+const disabled = ref(true)
 
 const validateName = (value) =>{
 
-        if(value.length === 0){
-
-            return 'This field is required';
-        }
-      if(value.length < 4){
-
-        return 'This field must be a valid name';
-
-      }else{
-        
+        if(value.length === 0) return 'This field is required';
+        else if(value.length < 4) return 'This field must be a valid name';
         return true
-      }
-      
 
 }
 
@@ -49,6 +39,7 @@ const  validateEmail = (value) =>{
 
       return true;
     }
+
 
 
 const props = defineProps({
@@ -73,9 +64,6 @@ const send = (() =>{
 
 })
 
-
-
-
 </script>
 
 <template>
@@ -93,30 +81,30 @@ const send = (() =>{
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspen varius enim in eros elementum tristique. 
         </p>
         
-        <Form class="form">
+        <Form class="form" @submit="send()">
 
             <div class="form_names">
                 <div class="form_fields">
                     <label for="firstName">First Name</label>
-                    <Field :rules="validateName" v-model="formInputs.firstName" name="firstName" type="text"/>
+                    <Field :rules="validateName"  v-model="formInputs.firstName" name="firstName" type="text"/>
                         <ErrorMessage name="firstName" />
                 </div>
                 <div class="form_fields">
                     <label for="lastName">Last Name</label>
-                    <Field  :rules="validateName" v-model="formInputs.lastName" required name="lastName" type="text"/>
+                    <Field :rules="validateName" v-model="formInputs.lastName" required name="lastName" type="text"/>
                     <ErrorMessage name="lastName" />
                 </div>
             </div>
             <div class="form_fields  form_fields__email">
                 <label for="email">Email</label>
-                <Field :rules="validateEmail" v-model="formInputs.email" required name="email" type="email"/>
+                <Field :rules="validateEmail"  v-model="formInputs.email" required name="email" type="email"/>
                 <ErrorMessage name="email" />
             </div>
-            <div class="form_fields">
+            <div class="form_fields__textarea form_fields">
                 <label  for="message">Message</label>
                 <textarea required name="message" v-model="formInputs.message" placeholder="Type your Messege"></textarea>
             </div>
-            <Buttons @click.prevent="send()"  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
+            <Buttons  :disabled="disabled" :style="{cursor: disabled ? 'auto' : 'pointer'  }"  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
         </Form>
     </div>
 </div>
@@ -208,4 +196,48 @@ const send = (() =>{
 [role="alert"]{
     color: red;
 }
+
+
+@media(max-width:450px){
+
+    .join{
+    padding:20px;
+    height: auto;
+    width: 90%;
+    &__title{
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+    &__text{
+        font-size: 14px;
+    }
+    .form{
+        margin-top:32px;
+
+        &_names{
+            display:block;
+            height: auto;
+        }
+        &_fields{
+            margin-bottom:10px;
+            height: 81px;
+            width: 100%;
+            &__email{
+                height: 81px;
+            }
+            textarea{
+                width:100%;
+            }
+            &__textarea{
+                height: 156px;
+            }
+        }
+    }
+}
+
+
+}
+
+
+
 </style>

@@ -75,14 +75,14 @@ const props = defineProps({
     }
 }
 
-
 @media(max-width:450px){
 
     .news{
         margin-bottom: 45px;
         &-cards{
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin:30px auto;
+            max-width: 302px;
         }
     }
 

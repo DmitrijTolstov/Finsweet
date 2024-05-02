@@ -13,8 +13,18 @@
     margin-top: 96px;
     iframe{
         border: 0;
-        width: 100vw;
+        width: 100%;
         height: 40vh;
     }
 }
+
+
+@media(max-width:850px){
+
+    .maps{
+        margin-top: 45px;
+    }
+}
+
+
 </style>

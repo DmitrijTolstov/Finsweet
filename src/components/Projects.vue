@@ -40,4 +40,22 @@ import PortfolioCard from '@/components/PortfolioCard.vue';
     }
 }
 
+
+
+@media(max-width:850px){
+
+    .projects{
+    margin-top:45px;
+    &-content{
+        display:flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top:30px;
+    }
+}
+
+
+
+}
+
 </style>

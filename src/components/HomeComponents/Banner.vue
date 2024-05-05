@@ -44,6 +44,10 @@ import Buttons from '@/components//Buttons.vue';
         }
         &_buttons{  
             margin-top: 48px;
+            display: flex;
+            .video{
+                    min-width: 147px;
+                }
         }
     }
     &-statistics{
@@ -57,7 +61,7 @@ import Buttons from '@/components//Buttons.vue';
 
 .video{
     margin-left: 24px;
-    background-image: url('src/assets/images/play.svg');
+    background-image: url('@/assets/images/play.svg');
     background-repeat: no-repeat;
     background-position: -100px;
     background-color: inherit;
@@ -67,7 +71,7 @@ import Buttons from '@/components//Buttons.vue';
     &:hover{
         background-color: rgba(255,255,255,.1);
         background-position: center;
-        font-size:0px;
+        font-size: 0;
     }
 }
 
@@ -95,10 +99,7 @@ import Buttons from '@/components//Buttons.vue';
                 display: flex;
                 flex-wrap: wrap;
                 gap: 15px;
-                .video{
-                    margin-left: 0;
-                    min-width: 147px;
-                }
+                
             }
         }
     }

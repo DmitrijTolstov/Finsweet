@@ -49,11 +49,6 @@ import PortfolioCard from '../PortfolioCard.vue';
 @media(max-width:850px){
     .projects{
     margin-block: 45px;
-    &-content{
-        &__title{
-        }
-    }
-    
     &-portfolio{
         flex-wrap: wrap;
         gap: 20px;

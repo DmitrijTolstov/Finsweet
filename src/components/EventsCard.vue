@@ -72,7 +72,7 @@ const props = defineProps({
         } 
     }
     &__btn{
-        background:center no-repeat url(src/assets/images/Arrow.svg) $white;
+        background:center no-repeat url(@/assets/images/Arrow.svg) $white;
         width: 56px;
         height: 56px;
         border-radius: 50%;

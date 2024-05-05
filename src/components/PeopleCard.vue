@@ -1,7 +1,5 @@
 <script setup>
 
-import { computed } from 'vue';
-
 const props = defineProps({
     images:{
         type:String,
@@ -17,15 +15,11 @@ const props = defineProps({
 })
 
 
-const imgUrl = computed(() =>{
-    return `src/assets/images/team/${props.images}.png`
-})
-
 </script>
 
 <template>
     <div class="card">
-        <img :src="imgUrl" alt="">
+        <img :src="images" alt="">
         <h4 class="card__name">
             {{props.name}}
         </h4>

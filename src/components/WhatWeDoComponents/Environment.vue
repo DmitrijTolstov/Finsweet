@@ -1,40 +1,48 @@
 <script setup>
 import EnvironmentList from '@/components/EnvironmentList.vue';
 
-const list = [
-    {
-        image:'src/assets/images/icons/home.png',
-        heading:'Build healthy cities',
-        text:'orem ipsum dolor sit amet, consectetur adipiscing elit. '
-    },
-    {
-        image:'src/assets/images/icons/wave.png',
-        heading:'Protect land and water',
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-        image:'src/assets/images/icons/help.png',
-        heading:'Tree plantation',
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-        image:'src/assets/images/icons/drop.png',
-        heading:'Water sustainability',
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-        image:'src/assets/images/icons/dog.png',
-        heading:'Animal safety',
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-        image:'src/assets/images/icons/plant.png',
-        heading:'Biodiversity',
-        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    
+const imgUrls = import.meta.glob('@/assets/images/icons/*.png', {
+  import: 'default',
+  eager: true
+})
 
-]
+const createCards = () =>{
+
+let card = [
+{
+    heading:'Build healthy cities',
+    text:'orem ipsum dolor sit amet, consectetur adipiscing elit. '
+},
+{
+    heading:'Protect land and water',
+    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
+},
+{
+    heading:'Tree plantation',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
+},
+{
+    heading:'Water sustainability',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
+},
+{
+    heading:'Animal safety',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
+},
+{
+    heading:'Biodiversity',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
+},
+];
+
+const arrImages = Object.values(imgUrls)
+
+for(let i = 0; i<card.length; i++){
+    card[i].images = arrImages[i]
+}
+return card
+}
+
 
 </script>
 
@@ -44,8 +52,8 @@ const list = [
             <h2 class="environment__heading">What we do for the environment</h2>
             <div class="environment-content">
                 <EnvironmentList
-                v-for="(item, index) in list" :key="index"
-                :image="item.image"
+                v-for="(item, index) in createCards()" :key="index"
+                :image="item.images"
                 :heading="item.heading"
                 :text="item.text"
                 ></EnvironmentList>

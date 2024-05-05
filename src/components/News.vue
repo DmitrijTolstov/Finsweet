@@ -1,24 +1,32 @@
 <script setup>
 import NewsCard from '@/components/NewsCard.vue';
 
+import images1 from '@/assets/images/newsCard1.png'
+import images2 from '@/assets/images/newsCard2.png'
+import images3 from '@/assets/images/newsCard3.png'
+import images4 from '@/assets/images/newsCard4.png'
+
+
+
+
 const cards = [
     {
-        images:'src/assets/images/newsCard1.png',
+        images:images1,
         title:'Don’t destroy greenery and don’t spoil scenery',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim'
     },
     {
-        images:'src/assets/images/newsCard2.png',
+        images:images2,
         title:' Is climate change happening faster than expected?',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim'
     },
     {
-        images:'src/assets/images/newsCard3.png',
+        images:images3,
         title:"Top 10 facts about wind farms you didn't know",
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim'
     },
     {
-        images:'src/assets/images/newsCard4.png',
+        images:images4,
         title:'Our goal is to make water available for everyone',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim'
     },

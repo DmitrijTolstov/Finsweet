@@ -50,7 +50,7 @@ const togglePopup = ((trigger) =>{
 <style scoped lang='scss'>
 @import '@/assets/vars.scss';
 .donate{
-    background: center no-repeat url(src/assets/images/background-donate.png);
+    background: center no-repeat url(@/assets/images/background-donate.png);
     padding: 93px 5px;
     display: flex;
     flex-direction: column;

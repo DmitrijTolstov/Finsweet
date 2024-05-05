@@ -20,7 +20,7 @@ const toggleBurger = (() =>{
     <div class="container">
         <div class="header">
             <div class="header-logo">
-                <img src="../assets/images/Logo.svg" alt="">
+                <img src="@/assets/images/Logo.svg" alt="">
             </div>
             <Navigation class="header-navigation"></Navigation>
             <div class="header-burger" >

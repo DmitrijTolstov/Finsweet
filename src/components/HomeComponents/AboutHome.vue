@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from 'vue'
 import Buttons from '@/components/Buttons.vue';
 import Supporters from '../Supporters.vue';
 </script>

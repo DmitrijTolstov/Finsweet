@@ -1,27 +1,33 @@
 <script setup>
 import Awards from '@/components/Awards.vue'
 
+
+import image1 from '@/assets/images/awards-stars.svg'
+import image2 from '@/assets/images/awards-prize.svg'
+import image3 from '@/assets/images/awards-medal.svg'
+import image4 from '@/assets/images/awards-medal2.svg'
+
 const awards = [
     {
-        img:'src/assets/images/awards-stars.svg',
+        img:image1,
         date:2021,
         title:'Best NGO Award',
         text:'Berlin, Germany'
     },
     {
-        img:'src/assets/images/awards-prize.svg',
+        img:image2,
         date:2018,
         title:'Global Award',
         text:'New York, USA'
     },
     {
-        img:'src/assets/images/awards-medal.svg',
+        img:image3,
         date:2014,
         title:'Foresto Award',
         text:'New Delhi, India'
     },
     {
-        img:'src/assets/images/awards-medal2.svg',
+        img:image4,
         date:2010,
         title:'Earth Saver Award',
         text:'Vienna, Austriay'

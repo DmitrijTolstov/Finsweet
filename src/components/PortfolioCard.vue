@@ -1,23 +1,36 @@
 <script setup>
 import Buttons from './Buttons.vue';
 
+import image1 from '@/assets/images/portfolio1.png';
+import image2 from '@/assets/images/portfolio2.png';
+import image3 from '@/assets/images/portfolio3.png';
+
+
 const cards = [
     {id:1,
-    image:'src/assets/images/portfolio1.png',
+    image:image1,
     title:'Mission 40K: Tree plantation',
     text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
     },
     {id:2,
-    image:'src/assets/images/portfolio2.png',
+    image:image2,
     title:'Weekly cleanliness program in city',
     text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
     },
     {id:3,
-    image:'src/assets/images/portfolio3.png',
+    image:image3,
     title:'Wildlife safety program 2021',
     text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
     },
 ]
+
+
+// const getImg = computed(() =>{ 
+//     return 'src/assets/images/'
+
+// })
+
+ 
 </script>
 
 <template>

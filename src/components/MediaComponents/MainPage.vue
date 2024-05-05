@@ -4,16 +4,24 @@ import Header from '@/components/Header.vue';
 import NewsCard from '@/components/NewsCard.vue';
 
 
+import image1 from '@/assets/images/blogs/image1.png';
+import image2 from '@/assets/images/blogs/image2.png';
+import image3 from '@/assets/images/blogs/image3.png';
+
+
 const blogsCard = [
     {
+        image:image1,
         title:'Don’t destroy greenery and don’t spoil scenery.',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
     },
     {
+        image:image2,
         title:'Why saving wildlife is extremely important',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
     },
     {
+        image:image3,
         title:'Caring for the present is caring for the future',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
     },
@@ -52,7 +60,7 @@ const blogsCard = [
                         :key="index"
                         :title="card.title"
                         :text="card.text"
-                        :images="`src/assets/images/blogs/image${index + 1}.png`"
+                        :images="card.image"
                         :display="'flex'"
                         :gap="'24px'"
                     ></NewsCard>
@@ -117,21 +125,11 @@ const blogsCard = [
     &-container{
         flex-direction: column;
     }
-    &-content{
-        &__heading{
-        }
-        &__title{
-        }
-        &__text{
-        }
-    }
     &-container{
         gap: 45px;
     }
     &-blogs{
         margin-bottom: 45px;
-        &-container{
-        }
     }
 }
 

@@ -1,23 +1,29 @@
 <script setup>
 
+
+import image1 from '@/assets/images/projects-icons/image1.png'
+import image2 from '@/assets/images/projects-icons/image2.png'
+import image3 from '@/assets/images/projects-icons/image3.png'
+import image4 from '@/assets/images/projects-icons/image4.png'
+
 const business = [
     {
-        image:'src/assets/images/projects-icons/image1.png',
+        image:image1,
         title:'200+ Plantation in 1 week',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
     },
     {
-        image:'src/assets/images/projects-icons/image2.png',
+        image:image2,
         title:'230 People Have donated',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
     },
     {
-        image:'src/assets/images/projects-icons/image3.png',
+        image:image3,
         title:'30+ people joined ',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
     },
     {
-        image:'src/assets/images/projects-icons/image4.png',
+        image:image4,
         title:'$324 Raised for this initiate',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
     },

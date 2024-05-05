@@ -1,6 +1,6 @@
 <script setup>
 import Buttons from '@/components/Buttons.vue'
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 import { Form, Field, ErrorMessage  } from 'vee-validate';
 

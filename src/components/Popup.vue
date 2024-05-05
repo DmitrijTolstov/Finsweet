@@ -1,6 +1,6 @@
 <script setup>
 import Buttons from '@/components/Buttons.vue'
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 import { Form, Field, ErrorMessage  } from 'vee-validate';
 
@@ -14,15 +14,15 @@ const formInputs = ref(
     }
 )
 
-const disabled = ref(true)
-
 const validateName = (value) =>{
 
-        if(value.length === 0) return 'This field is required';
+        if(!value) return 'This field is required';
         else if(value.length < 4) return 'This field must be a valid name';
         return true
 
 }
+
+
 
 const  validateEmail = (value) =>{
       if (!value) {
@@ -62,6 +62,15 @@ const send = (() =>{
         .then((response) => response.json())
         .then((json) => console.log(json));
 
+        formInputs.value.firstName = ''
+        formInputs.value.lastName = ''
+        formInputs.value.email = ''
+})
+
+
+const isDisable = computed(() =>{
+    return formInputs.value.firstName.length > 4 && formInputs.value.lastName.length > 4  && formInputs.value.email.length > 4 ?  false :  true
+    
 })
 
 </script>
@@ -104,7 +113,7 @@ const send = (() =>{
                 <label  for="message">Message</label>
                 <textarea required name="message" v-model="formInputs.message" placeholder="Type your Messege"></textarea>
             </div>
-            <Buttons  :disabled="disabled" :style="{cursor: disabled ? 'auto' : 'pointer'  }"  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
+            <Buttons  :disabled="isDisable" :style="{cursor: isDisable ? 'auto' : 'pointer'  }"  type="submit" :bg-color="'#70C174'" :title="'Send message'" class="form-btn"></Buttons>
         </Form>
     </div>
 </div>
